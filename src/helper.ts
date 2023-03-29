@@ -1,6 +1,6 @@
 import * as core from '@actions/core'
 import PyPI from './pypi'
-import { context } from '@actions/github'
+import {context} from '@actions/github'
 import {
   getNextPostVersion,
   getStableVersion,
@@ -43,7 +43,8 @@ export default class Helper {
       core.notice('Force release, skipping version check')
     }
 
-    const version = inputVersion || await this.pypi.getLatestVersion(packageName)
+    const version =
+      inputVersion || (await this.pypi.getLatestVersion(packageName))
 
     if (!version) throw new Error(`No version found for ${packageName}`)
 

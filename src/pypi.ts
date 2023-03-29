@@ -1,5 +1,5 @@
 import fetch from 'node-fetch'
-import { sortVersions } from './version'
+import {sortVersions} from './version'
 
 interface IResponseData {
   releases: {

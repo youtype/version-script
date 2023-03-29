@@ -15310,7 +15310,7 @@ class Helper {
         if (force) {
             core.notice('Force release, skipping version check');
         }
-        const version = inputVersion || await this.pypi.getLatestVersion(packageName);
+        const version = inputVersion || (await this.pypi.getLatestVersion(packageName));
         if (!version)
             throw new Error(`No version found for ${packageName}`);
         core.notice(`${packageName} version = ${version}`);
